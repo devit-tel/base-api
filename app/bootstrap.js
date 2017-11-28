@@ -8,7 +8,9 @@ const BOOTSTRAP_PATH = {
   // Server
   SERVER: 'app/cores/server',
   // Load all Middleware
-  MIDDLEWARE: 'app/cores/middleware'
+  MIDDLEWARE: 'app/cores/middleware',
+  // Load all Messaging consumer
+  MESSAGING: 'app/cores/messaging'
 }
 
 export default async function () {

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run requirements-check && export NODE_ENV=development && DEBUG=koa*,worker,app* nodemon",
+    "dev": "npm run requirements-check && DEBUG=koa*,worker,app* nodemon",
     "requirements-check": "node check-version.js",
     "postinstall": "npm run requirements-check"
   },

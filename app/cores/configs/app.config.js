@@ -19,6 +19,10 @@ export default {
     middlewareRoute: {
       path: 'app/cores/middlewares',
       extension: 'middleware-route'
+    },
+    messaging: {
+      path: 'app/messaging',
+      extension: 'messaging'
     }
   },
   baseURI: process.env.BASE_URI || ''
