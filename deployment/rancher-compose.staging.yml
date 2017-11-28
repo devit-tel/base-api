@@ -1,0 +1,11 @@
+external-api:
+  upgrade_strategy:
+    start_first: true
+  health_check:
+    port: 80
+    request_line: "GET /${COUNTRY}/${BASE_URI}/system/health HTTP/1.0"
+    interval: 3000
+    unhealthy_threshold: 5
+    healthy_threshold: 2
+    response_timeout: 10000
+    strategy: recreate

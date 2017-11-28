@@ -1,0 +1,51 @@
+{
+  "name": "external-api",
+  "version": "1.0.0",
+  "description": "external api for used by any apis from Sendit",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run requirements-check && export NODE_ENV=development && DEBUG=koa*,worker,app* nodemon",
+    "requirements-check": "node check-version.js",
+    "postinstall": "npm run requirements-check"
+  },
+  "engines": {
+    "node": ">=6.11.0"
+  },
+  "author": "Watchrapong Agsonchu",
+  "license": "SENDIT",
+  "devDependencies": {
+    "amqp-node": "git+https://gitlab.com/sendit-th/amqp-node.git",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "koa": "^2.2.0",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "debug": "^2.6.6",
+    "dot": "^1.1.1",
+    "dotenv": "^4.0.0",
+    "gelf-pro": "^1.2.0",
+    "kcors": "^2.2.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-passport": "^3.0.0",
+    "koa-router": "7.0.1",
+    "mathjs": "^3.12.2",
+    "mongoose": "^4.13.5",
+    "recursive-readdir-sync": "^1.0.6",
+    "sparkpost": "^2.1.2",
+    "strong-cluster-control": "^2.2.3"
+  }
+}

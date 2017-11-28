@@ -1,0 +1,3 @@
+external-api:
+  restart: always
+  image: registry.dev.sendit.asia/sendit/external-api

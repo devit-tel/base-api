@@ -1,0 +1,18 @@
+external-api:
+  image: registry.dev.sendit.asia/sendit/external-api:build-${CI_BUILD_ID}
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.service.selector.link: country = ${COUNTRY}
+    service.type: api
+    country: ${COUNTRY}
+  environment:
+    NODE_ENV: development
+    NODE_CLUSTER: true
+    MAILGUN_APIKEY: ${DEVELOPMENT_MAILGUN_APIKEY}
+    MAINGUN_DOMAIN: ${DEVELOPMENT_MAILGUN_DOMAIN}
+    SPARKPOST_API_KEY: ${DEVELOPMENT_SPARKPOST_API_KEY}
+    BASE_URI: "/${COUNTRY}/${BASE_URI}"
+    STACK_TRACE: false
+    PORT: 80
+  stdin_open: true
+  tty: true

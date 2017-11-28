@@ -1,0 +1,20 @@
+external-api:
+  restart: always
+  image: registry.dev.sendit.asia/sendit/external-api:${CI_BUILD_TAG}
+  labels:
+    io.rancher.scheduler.affinity:host_label: stricted_service=all
+    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=external-api
+    io.rancher.container.pull_image: always
+    io.rancher.service.selector.link: country = ${COUNTRY}
+    service.type: api
+  environment:
+    NODE_ENV: production
+    NODE_CLUSTER: true
+    MAILGUN_APIKEY: ${PRODUCTION_MAILGUN_APIKEY}
+    MAINGUN_DOMAIN: ${PRODUCTION_MAILGUN_DOMAIN}
+    SPARKPOST_API_KEY: ${PRODUCTION_SPARKPOST_API_KEY}
+    BASE_URI: "/${COUNTRY}/${BASE_URI}"
+    STACK_TRACE: false
+    PORT: 80
+  stdin_open: true
+  tty: true
