@@ -14,7 +14,7 @@
     "node": ">=6.11.0"
   },
   "author": "Watchrapong Agsonchu",
-  "license": "SENDIT",
+  "license": "MIT",
   "devDependencies": {
     "amqp-node": "git+https://gitlab.com/sendit-th/amqp-node.git",
     "babel-polyfill": "^6.23.0",
